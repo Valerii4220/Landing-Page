@@ -1,0 +1,159 @@
+:root {
+  --h: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  height: 100vh;
+  position: relative;
+}
+/* navbar */
+nav {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--h);
+  display: none;
+}
+/* manu */
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+nav ul li {
+  text-decoration: none;
+  margin: 1rem 1.7rem;
+}
+
+nav ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+  font-family: 'Varela Round', sans-serif;
+}
+nav ul li a:hover{
+  color: skyblue;
+}
+ /* navigation button */
+.nav-btn {
+  z-index: 5;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  right: 40px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.line {
+  background-color: white;
+  width: 20px;
+  height: 1px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+/* navigation button animation */
+.nav-btn.active .line {
+  transition: transform .75s, opacity .75s ;
+}
+.nav-btn.active {
+  background-color: transparent;
+  transition: background-color .75s;
+}
+.nav-btn {
+  transition: background-color .75s;
+}
+.nav-btn .line {
+  transition: transform .75s, opacity .75s ;
+}
+.nav-btn.active .line:nth-child(1) {
+  transform: rotate(45deg) translateX(3px) translateY(2px);
+}
+.nav-btn.active .line:nth-child(2) {
+  transform: rotate(180deg);
+  opacity: 0;
+  }
+.nav-btn.active .line:nth-child(3) {
+  transform: rotate(-45deg) translateX(5px) translateY(-4px);
+}
+/* container */
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  position: fixed;
+  bottom: 0;
+}
+section h1 {
+  font-size: 4rem;
+}
+section p {
+  font-size: 1.5rem;
+  width: 80%
+}
+section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+section:first-child {
+  color: black;
+}
+
+#main {
+  background: url('https://designwanted.com/wp-content/uploads/2018/01/Industrial-Design-10-most-influential-product-designers-of-all-time.png') no-repeat center center/ cover;
+}
+#about {
+  background: url('https://i.ytimg.com/vi/ETsekJKsr3M/maxresdefault.jpg') no-repeat center center/ cover;
+}
+#contact {
+  background: url('https://images.unsplash.com/photo-1537166373494-05097c27a525?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80') no-repeat center center/ cover;
+}
+/* scroll down arrow */
+.arrow {
+  margin-top: 10%;
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.arrow span {
+  animation: bounce 1.5s infinite;
+}
+/* arrow animation */
+@keyframes bounce {
+  0%   {  transform: translateY(-5px);  }
+  50%  {  transform: translateY(3px);  }
+  100% {  transform: translateY(-5px);  }
+}
